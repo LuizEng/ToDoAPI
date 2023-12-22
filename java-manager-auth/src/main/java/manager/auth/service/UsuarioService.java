@@ -1,11 +1,11 @@
-package manager.task.service;
+package manager.auth.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-import manager.task.entity.Usuario;
-import manager.task.repository.UsuarioRepository;
+import manager.auth.entity.Usuario;
+import manager.auth.repository.UsuarioRepository;
 
 @Service
 @RequiredArgsConstructor
