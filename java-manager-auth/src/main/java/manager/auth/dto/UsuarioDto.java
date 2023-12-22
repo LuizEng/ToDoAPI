@@ -1,4 +1,4 @@
-package manager.task.dto;
+package manager.auth.dto;
 
 import lombok.Getter;
 import lombok.Setter;

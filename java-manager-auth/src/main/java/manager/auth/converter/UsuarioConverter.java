@@ -1,11 +1,11 @@
-package manager.task.converter;
+package manager.auth.converter;
 
 import org.springframework.stereotype.Component;
 
 import lombok.RequiredArgsConstructor;
-import manager.task.dto.UsuarioDto;
-import manager.task.entity.Usuario;
-import manager.task.repository.UsuarioRepository;
+import manager.auth.dto.UsuarioDto;
+import manager.auth.entity.Usuario;
+import manager.auth.repository.UsuarioRepository;
 
 @Component
 @RequiredArgsConstructor

@@ -1,8 +1,8 @@
-package manager.task.repository;
+package manager.auth.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import manager.task.entity.Usuario;
+import manager.auth.entity.Usuario;
 
 public interface UsuarioRepository extends MongoRepository<Usuario, String>{
 
