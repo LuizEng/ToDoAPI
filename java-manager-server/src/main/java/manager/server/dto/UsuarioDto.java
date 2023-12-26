@@ -1,4 +1,4 @@
-package manager.auth.dto;
+package manager.server.dto;
 
 import lombok.Getter;
 import lombok.Setter;

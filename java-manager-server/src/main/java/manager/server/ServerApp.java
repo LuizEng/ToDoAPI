@@ -1,11 +1,10 @@
-package manager.auth;
+package manager.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 @SpringBootApplication
-public class AuthApp {
+public class ServerApp {
     public static void main(String[] args) {
-        SpringApplication.run(AuthApp.class, args);
+        SpringApplication.run(ServerApp.class, args);
     }
 }
