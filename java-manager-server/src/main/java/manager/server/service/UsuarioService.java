@@ -1,11 +1,11 @@
-package manager.auth.service;
+package manager.server.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-import manager.auth.entity.Usuario;
-import manager.auth.repository.UsuarioRepository;
+import manager.server.entity.Usuario;
+import manager.server.repository.UsuarioRepository;
 
 @Service
 @RequiredArgsConstructor

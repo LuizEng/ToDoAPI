@@ -1,8 +1,8 @@
-package manager.auth.repository;
+package manager.server.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import manager.auth.entity.Usuario;
+import manager.server.entity.Usuario;
 
 public interface UsuarioRepository extends MongoRepository<Usuario, String>{
 

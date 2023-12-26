@@ -3,6 +3,7 @@ package manager.core.jwt;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
@@ -38,17 +39,7 @@ public class JwtUtil {
         return Long.valueOf(body.get("idUsuario").toString());
 
     }
-
-    
-    public Long getidTenantToken(String token) {
-        Claims body = Jwts.parser()
-                .setSigningKey(secret)
-                .parseClaimsJws(token)
-                .getBody();
-
-        return Long.valueOf(body.get("idTenant").toString());
-
-    }    
+  
 
     public String getLoginToken(String token) {
         Claims body = Jwts.parser()
@@ -60,19 +51,19 @@ public class JwtUtil {
 
     }
 
-    public String generateToken(String issuer, String subject, Long expiration, Long idUsuario, String login) {
+    public String generateToken(UserDetails userDetails) {
     	Date hj = new Date();
-    	Date dtExpiration = new Date(hj.getTime() + expiration);
+    	Date dtExpiration = new Date(hj.getTime() + 60);
     	
-    	Claims claims = Jwts.claims().setSubject(subject)
-    			.setIssuer(issuer)
+    	Claims claims = Jwts.claims().setSubject("TokenSubject")
+    			.setIssuer("TokenIssuer")
     			.setIssuedAt(hj)
     			.setExpiration(dtExpiration);
 
         return Jwts.builder()
                 .setClaims(claims)
-                .claim("idUsuario", idUsuario)
-                .claim("login", login)
+                .claim("username", userDetails.getUsername())
+                .claim("password", userDetails.getPassword())
                 .signWith(SignatureAlgorithm.HS512, secret)
                 .compact();
     }
