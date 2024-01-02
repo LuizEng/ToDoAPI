@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import manager.task.client.AuthServiceClient;
 import manager.task.converter.TarefaConverter;
 import manager.task.dto.TarefaDto;
 import manager.task.entity.Tarefa;
@@ -27,8 +29,17 @@ public class TarefaController {
 
 	private final TarefaConverter tarefaConverter;
 	
+	@Autowired
+    private AuthServiceClient authServiceClient;
+	
     @GetMapping
-    public List<Tarefa> listarTodasTarefas() {
+    public List<Tarefa> listarTodasTarefas(HttpServletRequest request) {
+        String authorizationHeader = request.getHeader("Authorization");
+        Boolean teste = false;
+        
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+        	teste = authServiceClient.validateToken(authorizationHeader.substring(7)); 
+        }
         return tarefaService.listarTodas();
     }
 

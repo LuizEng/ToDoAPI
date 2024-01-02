@@ -12,7 +12,7 @@ import manager.server.dto.UsuarioDto;
 import manager.server.service.UsuarioService;
 
 @RestController
-@RequestMapping("/api/singup")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 public class UsuarioController {
     
@@ -21,7 +21,7 @@ public class UsuarioController {
 
 	private final UsuarioConverter usuarioConverter;
 	
-    @PostMapping
+    @PostMapping(value = "/singup")
     public void criarUsuario(@RequestBody UsuarioDto usuarioDto) {
     	usuarioService.salvarUsuario(usuarioConverter.mapToEntityInsert(usuarioDto));
     }
