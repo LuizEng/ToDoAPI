@@ -9,15 +9,8 @@ import lombok.Setter;
 @Setter
 public class TarefaDto {
 	
-	public TarefaDto(String nome, String descricao, LocalDate dataVencimento, Boolean status) {
-		this.nome = nome;
-		this.descricao = descricao;
-		this.dataVencimento = dataVencimento;
-		this.status = status;
-	}
-	
     private String nome;
     private String descricao;
     private LocalDate dataVencimento;
-    private Boolean status;	
+    private Boolean ativo;	
 }

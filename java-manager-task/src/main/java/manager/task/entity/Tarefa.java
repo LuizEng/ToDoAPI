@@ -13,18 +13,11 @@ import lombok.Setter;
 @Setter
 public class Tarefa {
 		
-	public Tarefa(String nome, String descricao, LocalDate dataVencimento, Boolean status) {
-		this.nome = nome;
-		this.descricao = descricao;
-		this.dataVencimento = dataVencimento;
-		this.status = status;
-	}	
-	
 	@Id
 	private String id;
     private String nome;
     private String descricao;
     private LocalDate dataVencimento;
-    private Boolean status;	
+    private Boolean ativo;	
 	
 }

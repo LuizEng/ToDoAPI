@@ -9,6 +9,12 @@ import manager.task.entity.Tarefa;
 public class TarefaConverter {
 
 	public Tarefa mapToEntity(TarefaDto dto) {
-		return new Tarefa(dto.getNome(), dto.getDescricao(), dto.getDataVencimento(), dto.getStatus());
+		Tarefa ent = new Tarefa();
+		ent.setNome(dto.getNome());		
+		ent.setDescricao(dto.getDescricao());
+		ent.setDataVencimento(dto.getDataVencimento());
+		ent.setAtivo(dto.getAtivo());
+		
+		return ent;
 	}
 }
