@@ -1,7 +1,1 @@
-TODO:
-
- Nesse ponto falta implementar uma replicação da entidade "USUARIO" para o auth e um webconfig.
-
-
-
- DTOs a nível de core
+Um projeto simples, apenas para realizar a integração com o MongoDb.
